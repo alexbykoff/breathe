@@ -3,21 +3,23 @@ html, body {
     background-color: #D8973C;
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 .holder {
-    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+    flex-direction: column;
+    padding: 2rem;
 }
 
 .circle-holder {
     width: 320px;
     height: 320px;
-    border: 4px dashed #D8C99B;
+    border: 4px solid #D8C99B;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -35,10 +37,19 @@ html, body {
     border-width: 60px;
     animation: heartbeat 16s infinite ease-in-out;
 }
+.text{
+    margin: 2rem;
+    color: #D8C99B;
+}
+.text::before {
+    font-size: 2rem;
+    content: '';
+    animation: text 16s infinite ease-in-out;
+}
 
 @keyframes heartbeat {
     from {
-        transform: scale(0.01);
+        transform: scale(0.1);
         background-color: #D8C99B;
     }
     25% {
@@ -50,9 +61,27 @@ html, body {
     }
     75% {
         background-color: #D8C99B;
-        transform: scale(0.01);
+        transform: scale(0.1);
     }
     to {
-        transform: scale(0.01);
+        transform: scale(0.1);
     }
+}
+
+@keyframes text {
+  from {
+    content: 'breath in';
+  }
+  50% {
+    content: 'hold breath';
+  }
+  51% {
+    content: 'breath out';
+  }
+  99% {
+    content: 'hold breath';
+  }
+  to {
+    content: 'hold breath';
+  }
 }
