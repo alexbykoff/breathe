@@ -55,6 +55,14 @@ html, body {
     margin-bottom: 3rem;
 }
 
+#timer {
+    align-self: flex-start;
+    margin: 1rem auto;
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+}
+
 .text::before {
     transition: 200ms;
     font-size: 2rem;
