@@ -19,7 +19,7 @@ html, body {
 .circle-holder {
     width: 320px;
     height: 320px;
-    border: 4px solid #D8C99B;
+    /*border: 4px solid #D8C99B;*/
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -32,8 +32,8 @@ html, body {
     border-color: #D8C99B;
     border-radius: 50%;
     background-color: #fff;
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     border-width: 60px;
     animation: heartbeat 16s infinite ease-in-out;
 }
