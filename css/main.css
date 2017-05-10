@@ -3,7 +3,7 @@ html, body {
     background-color: #D8973C;
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .holder {
@@ -37,10 +37,12 @@ html, body {
     border-width: 60px;
     animation: heartbeat 16s infinite ease-in-out;
 }
-.text{
+
+.text {
     margin: 2rem;
     color: #D8C99B;
 }
+
 .text::before {
     font-size: 2rem;
     content: '';
@@ -50,17 +52,14 @@ html, body {
 @keyframes heartbeat {
     from {
         transform: scale(0.1);
-        background-color: #D8C99B;
     }
     25% {
         transform: scale(1);
-        background-color: #D8973C;
     }
     50% {
         transform: scale(1);
     }
     75% {
-        background-color: #D8C99B;
         transform: scale(0.1);
     }
     to {
@@ -69,19 +68,19 @@ html, body {
 }
 
 @keyframes text {
-  from {
-    content: 'breath in';
-  }
-  50% {
-    content: 'hold breath';
-  }
-  51% {
-    content: 'breath out';
-  }
-  99% {
-    content: 'hold breath';
-  }
-  to {
-    content: 'hold breath';
-  }
+    from {
+        content: 'breath in';
+    }
+    50% {
+        content: 'hold breath';
+    }
+    51% {
+        content: 'breath out';
+    }
+    99% {
+        content: 'hold breath';
+    }
+    to {
+        content: 'hold breath';
+    }
 }
