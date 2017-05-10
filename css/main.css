@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+  background-color: #D8973C;
+}
+
+.holder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.circle {
+  border-style: solid;
+  border-color: #D8C99B;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: heartbeat 16s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+  from {
+    width: 24px;
+    height: 24px;
+    border-width: 6px;
+  }
+  25% {
+    width: 200px;
+    height: 200px;
+    border-width: 60px;
+  }
+  50% {
+    width: 200px;
+    height: 200px;
+    border-width: 60px;
+  }
+  75% {
+    width: 24px;
+    height: 24px;
+    border-width: 6px;
+  }
+  to {
+    width: 24px;
+    height: 24px;
+    border-width: 6px;
+  }
+}
