@@ -12,7 +12,7 @@ html, body {
   justify-content: flex-start;
   align-items: center;
   top: 0;
-  right: 0;  
+  right: 0;
   width: 3rem;
 }
 
@@ -54,14 +54,13 @@ html, body {
   align-content: center;
 }
 
-.circle {
+.circle {  
   border-style: solid;
   border-color: #D8C99B;
   border-radius: 50%;
-  background-color: #fff;
   width: 160px;
   height: 160px;
-  border-width: 60px;
+  border-width: 40px;
   animation: heartbeat 16s infinite ease-in-out;
 }
 
@@ -69,6 +68,13 @@ html, body {
   margin: 2rem;
   color: #fff;
   transition: 200ms;
+}
+
+.text::before {
+  transition: 500ms;
+  font-size: 3rem;
+  content: '';
+  animation: text 16s infinite ease-in-out, fade 4s infinite ease-in-out;
 }
 
 .tag {
@@ -93,28 +99,29 @@ html, body {
   font-size: 3rem;
 }
 
-.text::before {
-  transition: 200ms;
-  font-size: 2rem;
-  content: '';
-  animation: text 16s infinite ease-in-out, fade 4s infinite ease-in-out;
-}
-
 @keyframes heartbeat {
   from {
     transform: scale(0.1);
+    border-color: rgba(255,255,255,.2);
   }
   25% {
     transform: scale(1);
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,1);
   }
   50% {
     transform: scale(1);
+background-color: rgba(255,255,255,1);
+    border-color: rgba(255,255,255,1);
   }
   75% {
     transform: scale(0.1);
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,.2);
   }
   to {
     transform: scale(0.1);
+    border-color: rgba(255,255,255,.2);
   }
 }
 
