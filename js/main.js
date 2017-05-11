@@ -1,14 +1,9 @@
-let bgColor;
-try {
-  bgColor = JSON.parse(window.localStorage.getItem("breathe-bg"));
-} catch (error) {
-  bgColor = "D8973C";
-}
+let bgColor = window.localStorage.getItem("breathe-bg");
+const backgroundButtons = [...document.getElementsByClassName("bg_selector")];
+
 if (bgColor === null) {
   bgColor = "D8973C";
-  window.localStorage.setItem("breathe-bg", bgColor);
 }
-const backgroundButtons = [...document.getElementsByClassName("bg_selector")];
 
 changeColor(bgColor);
 

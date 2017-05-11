@@ -12,29 +12,24 @@ html, body {
   justify-content: flex-start;
   align-items: center;
   top: 0;
-  right: 0;
-  height: 80%;
-  width: 4rem;
+  right: 0;  
+  width: 3rem;
 }
 
 .bg_selector {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   border-color: #D8C99B;
   border-width: 5px;
   border-style: solid;
-  margin-bottom: .75rem;
+  margin-top: .5rem;
   transition: all .3s linear;
   cursor: pointer;
 }
 
 .bg_selector:hover {
   border-color: #fff;
-}
-
-.bg_selector:first-child {
-  margin-top: 1rem;
 }
 
 .bg_selector.active-selector {
