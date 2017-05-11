@@ -1,6 +1,5 @@
 html, body {
   height: 100%;
-  background-color: #D8973C;
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
@@ -36,6 +35,10 @@ html, body {
 
 .bg_selector:first-child {
   margin-top: 1rem;
+}
+
+.bg_selector.active-selector {
+  border-color: #fff;
 }
 
 .holder {
