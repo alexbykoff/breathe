@@ -1,119 +1,151 @@
 html, body {
-    height: 100%;
-    background-color: #D8973C;
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
+  height: 100%;
+  background-color: #D8973C;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.right-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  top: 0;
+  right: 0;
+  height: 80%;
+  width: 4rem;
+}
+
+.bg_selector {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border-color: #D8C99B;
+  border-width: 5px;
+  border-style: solid;
+  margin-bottom: .75rem;
+  transition: all .3s linear;
+  cursor: pointer;
+}
+
+.bg_selector:hover {
+  border-color: #fff;
+}
+
+.bg_selector:first-child {
+  margin-top: 1rem;
 }
 
 .holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .circle-holder {
-    flex-direction: column;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  flex-direction: column;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .circle {
-    border-style: solid;
-    border-color: #D8C99B;
-    border-radius: 50%;
-    background-color: #fff;
-    width: 160px;
-    height: 160px;
-    border-width: 60px;
-    animation: heartbeat 16s infinite ease-in-out;
+  border-style: solid;
+  border-color: #D8C99B;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 160px;
+  height: 160px;
+  border-width: 60px;
+  animation: heartbeat 16s infinite ease-in-out;
 }
 
 .text {
-    margin: 2rem;
-    color: #fff;
-    transition: 200ms;
+  margin: 2rem;
+  color: #fff;
+  transition: 200ms;
 }
 
 .tag {
-    margin: 1rem;
-    color: #fff;
-    text-align: center;
+  margin: 1rem;
+  color: #fff;
+  text-align: center;
 }
 
 .tag__upper {
-    align-self: flex-start;
-    margin: 1rem auto;
-    text-align: center;
-    color: #D8C99B;
-    margin-bottom: 3rem;
+  align-self: flex-start;
+  margin: 1rem auto;
+  text-align: center;
+  color: #D8C99B;
+  margin-bottom: 3rem;
 }
 
 #timer {
-    align-self: flex-start;
-    margin: 1rem auto;
-    text-align: center;
-    color: #fff;
-    font-size: 3rem;
+  align-self: flex-start;
+  margin: 1rem auto;
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
 }
 
 .text::before {
-    transition: 200ms;
-    font-size: 2rem;
-    content: '';
-    animation: text 16s infinite ease-in-out, fade 4s infinite ease-in-out;
+  transition: 200ms;
+  font-size: 2rem;
+  content: '';
+  animation: text 16s infinite ease-in-out, fade 4s infinite ease-in-out;
 }
 
 @keyframes heartbeat {
-    from {
-        transform: scale(0.1);
-    }
-    25% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(0.1);
-    }
-    to {
-        transform: scale(0.1);
-    }
+  from {
+    transform: scale(0.1);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(0.1);
+  }
 }
 
 @keyframes text {
-    from {
-        content: 'breath in';
-    }
-    50% {
-        content: 'hold breath';
-    }
-    51% {
-        content: 'breath out';
-    }
-    99% {
-        content: 'hold breath';
-    }
-    to {
-        content: 'hold breath';
-    }
+  from {
+    content: 'breath in';
+  }
+  50% {
+    content: 'hold breath';
+  }
+  51% {
+    content: 'breath out';
+  }
+  99% {
+    content: 'hold breath';
+  }
+  to {
+    content: 'hold breath';
+  }
 }
 
 @keyframes fade {
-    from {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
 }
