@@ -3,6 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
 }
 
 .right-menu {
@@ -19,11 +20,11 @@ html, body {
 .bg_selector {
   width: 1rem;
   height: 1rem;
-  border-radius: 50%;
-  border-color: #D8C99B;
-  border-width: 2px;
+  border-radius: 25%;
+  border-color: rgba(255,255,255,.2);
+  border-width: 3px;
   border-style: solid;
-  margin-top: .75rem;
+  margin-top: .5rem;
   transition: all .3s linear;
   cursor: pointer;
 }
@@ -66,7 +67,6 @@ html, body {
 }
 
 .text {
-  margin: 2rem;
   color: #fff;
   transition: 200ms;
 }
@@ -79,21 +79,16 @@ html, body {
 }
 
 .tag {
-  margin: 1rem;
   color: #fff;
   text-align: center;
 }
 
 .tag__upper {
-  margin: 1rem auto;
   text-align: center;
-  color: rgba(255,255,255,.2);
-  margin-bottom: 3rem;
+  color: rgba(255,255,255,.4);
 }
 
 #timer {
-  align-self: flex-start;
-  margin: 1rem auto;
   text-align: center;
   color: #fff;
   font-size: 2.5rem;
@@ -152,5 +147,38 @@ background-color: rgba(255,255,255,1);
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .text::before {
+    font-size: 2.5rem;
+  }
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .right-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 400px) {
+.circle {
+  width: 120px;
+  height: 120px;
+}
+  .tag__upper{
+    display: none;
+  }
+  .text::before {
+    font-size: 2rem;
+  }
+  #timer {
+    font-size: 1.75rem;
+  }
+  .bg_selector {
+    margin-top: 1rem;
   }
 }
