@@ -6,6 +6,35 @@ html, body {
   overflow: hidden;
 }
 
+#cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start {
+  color: #fff;
+  font-size: 2rem;
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 0 1rem .25rem 1rem;
+  border-radius: 1.25rem;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
+#start:hover {
+  background-color: #fff;
+  color: #777;
+}
+
 .right-menu {
   position: fixed;
   display: flex;
@@ -21,7 +50,7 @@ html, body {
   width: 1rem;
   height: 1rem;
   border-radius: 25%;
-  border-color: rgba(255,255,255,.2);
+  border-color: rgba(255, 255, 255, .2);
   border-width: 3px;
   border-style: solid;
   margin-top: .5rem;
@@ -44,7 +73,6 @@ html, body {
   align-content: center;
   flex-direction: column;
   height: 100vh;
-
 }
 
 .circle-holder {
@@ -56,7 +84,7 @@ html, body {
   align-content: center;
 }
 
-.circle {
+.circle.animate {
   border-style: solid;
   border-color: #D8C99B;
   border-radius: 50%;
@@ -71,7 +99,7 @@ html, body {
   transition: 200ms;
 }
 
-.text::before {
+.text.animate::before {
   transition: 500ms;
   font-size: 3.25rem;
   content: '';
@@ -85,7 +113,7 @@ html, body {
 
 .tag__upper {
   text-align: center;
-  color: rgba(255,255,255,.4);
+  color: rgba(255, 255, 255, .4);
 }
 
 #timer {
@@ -97,38 +125,38 @@ html, body {
 @keyframes heartbeat {
   from {
     transform: scale(0.2);
-    border-color: rgba(255,255,255,.2);
+    border-color: rgba(255, 255, 255, .2);
   }
   25% {
     transform: scale(1);
-    background-color: rgba(255,255,255,0);
-    border-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 1);
   }
   50% {
     transform: scale(1);
-background-color: rgba(255,255,255,1);
-    border-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 1);
   }
   75% {
     transform: scale(0.2);
-    background-color: rgba(255,255,255,0);
-    border-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, .2);
   }
   to {
     transform: scale(0.2);
-    border-color: rgba(255,255,255,.2);
+    border-color: rgba(255, 255, 255, .2);
   }
 }
 
 @keyframes text {
   from {
-    content: 'breath in';
+    content: 'breathe in';
   }
   50% {
     content: 'hold breath';
   }
   51% {
-    content: 'breath out';
+    content: 'breathe out';
   }
   99% {
     content: 'hold breath';
@@ -158,18 +186,17 @@ background-color: rgba(255,255,255,1);
     width: 120px;
     height: 120px;
   }
-
   .right-menu {
     display: none;
   }
 }
 
 @media screen and (max-height: 400px) {
-.circle {
-  width: 120px;
-  height: 120px;
-}
-  .tag__upper{
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+  .tag__upper {
     display: none;
   }
   .text::before {

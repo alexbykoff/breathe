@@ -13,6 +13,13 @@ backgroundButtons.map(e => {
   e.addEventListener("click", handleColorChange);
 });
 
+const cover = document.getElementById("cover");
+document.addEventListener("click", e=> {
+  cover.style.display = "none";
+  document.getElementsByClassName("circle")[0].classList.toggle("animate");
+  document.getElementsByClassName("text")[0].classList.toggle("animate");
+});
+
 var audio = new Audio("audio/waves.mp3");
 audio.play();
 let minutes = 1, seconds = 9;
@@ -42,10 +49,11 @@ function handleColorChange(event) {
 }
 
 function changeColor(color) {
+  document.getElementById("cover").style.backgroundColor = `#${color}`;
   document.body.style.backgroundColor = `#${color}`;
   backgroundButtons.forEach(e => e.classList.remove("active-selector"));
-  const activeSelector = document.querySelectorAll(`[data-color='${color}']`)[
-    0
-  ];
+  const activeSelector = document.querySelectorAll(
+    `[data-color='${color}']`
+  )[0];
   activeSelector.classList.add("active-selector");
 }
