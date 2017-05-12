@@ -44,6 +44,7 @@ html, body {
   top: 0;
   right: 0;
   width: 2rem;
+  z-index: 1001;
 }
 
 .bg_selector {
