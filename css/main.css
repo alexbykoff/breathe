@@ -14,6 +14,7 @@ html, body {
   height: 100vh;
   z-index: 1000;
   background-color: #fff;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,6 +114,7 @@ html, body {
 }
 
 .tag__upper {
+  margin-top: 2rem;
   text-align: center;
   color: rgba(255, 255, 255, .4);
 }
