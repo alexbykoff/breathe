@@ -1,4 +1,5 @@
 let bgColor = window.localStorage.getItem("breathe-bg");
+let audio, minutes, seconds;
 const backgroundButtons = [...document.getElementsByClassName("bg_selector")];
 
 if (bgColor === null) {
@@ -18,12 +19,13 @@ document.addEventListener("click", e=> {
   cover.style.display = "none";
   document.getElementsByClassName("circle")[0].classList.toggle("animate");
   document.getElementsByClassName("text")[0].classList.toggle("animate");
+  audio = new Audio("audio/waves.mp3");
+  audio.play();
+  minutes = 1, seconds = 9;
+  renderTimer(minutes, seconds);
+  const timer = window.setInterval(time, 1000);
 });
 
-var audio = new Audio("audio/waves.mp3");
-audio.play();
-let minutes = 1, seconds = 9;
-const timer = window.setInterval(time, 1000);
 
 function time() {
   seconds -= 1;
@@ -35,11 +37,16 @@ function time() {
     minutes = 0;
     seconds = 0;
   }
-  const sec = seconds < 10 ? "0" + seconds : seconds;
-  document.getElementById("timer").innerHTML = `0${minutes}:${sec}`;
+  renderTimer(minutes, seconds);
+
   if (minutes === 0 && seconds === 0) {
     window.clearInterval(time);
   }
+}
+
+function renderTimer(minutes, seconds){
+  const sec = seconds < 10 ? "0" + seconds : seconds;
+  document.getElementById("timer").innerHTML = `0${minutes}:${sec}`;
 }
 
 function handleColorChange(event) {
