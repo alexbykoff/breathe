@@ -38,10 +38,6 @@ function time() {
     }
     bar.style.width = progressBarWidth + "%";
     renderTimer(minutes, seconds);
-    //
-    // if (minutes === 0 && seconds === 0) {
-    //   window.clearInterval(time);
-    // }
 }
 
 function renderTimer(minutes, seconds) {
