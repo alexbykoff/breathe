@@ -15,7 +15,7 @@ backgroundButtons.map(e => {
 });
 
 const cover = document.getElementById("cover");
-document.addEventListener("click", e=> {
+document.getElementById("start").addEventListener("click", e=> {
   cover.style.display = "none";
   document.getElementsByClassName("circle")[0].classList.toggle("animate");
   document.getElementsByClassName("text")[0].classList.toggle("animate");
