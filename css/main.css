@@ -136,6 +136,29 @@ html, body {
     font-feature-settings: 'tnum' 1;
 }
 
+input[type="radio"] {
+    display: none;
+}
+
+label div {
+    border: 2px solid #fff;
+    display: inline-block;
+    padding: .375rem .75rem;
+    margin-bottom: .75rem;
+    color: #fff;
+    width: 3.75rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+#length__selector label:first-child div {
+    border-radius: 6px 0 0 6px;
+}
+
+#length__selector label:last-child div {
+    border-radius: 0 6px 6px 0;
+}
+
 @keyframes heartbeat {
     from {
         transform: scale(0.2);
