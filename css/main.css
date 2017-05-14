@@ -149,14 +149,33 @@ label div {
     width: 3.75rem;
     text-align: center;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+label div:hover {
+    background-color: #fff;
+    color: #444;
+}
+
+#length__selector {
+    font-size: 0;
+    margin-bottom: 2rem;
+}
+
+#length__selector label div {
+    font-size: 1rem;
 }
 
 #length__selector label:first-child div {
-    border-radius: 6px 0 0 6px;
+    border-radius: 12px 0 0 12px;
+}
+#length__selector label:not(:last-child) div {
+    border-right: 0;
 }
 
+
 #length__selector label:last-child div {
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 12px 12px 0;
 }
 
 @keyframes heartbeat {
