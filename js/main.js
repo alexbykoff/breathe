@@ -1,4 +1,10 @@
 let bgColor = window.localStorage.getItem("breathe-bg");
+let length = window.localStorage.getItem("breathe-length");
+console.log(length)
+if (length !== null){
+    const radio = document.getElementById("length"+length);
+    radio.checked = true;
+}
 let audio, minutes, seconds, progressBarWidth;
 const backgroundButtons = [...document.getElementsByClassName("bg_selector")];
 const bar = document.getElementById("bar");
@@ -15,22 +21,25 @@ backgroundButtons.map(e => {
     e.addEventListener("click", handleColorChange);
 });
 
-    let length;
-
-
 const cover = document.getElementById("cover");
 document.getElementById("start").addEventListener("click", e => {
-    const lengthSelector = [...document.getElementsByName("length")];
+    if (length === null) {
+        const lengthSelector = [...document.getElementsByName("length")];
 
-    lengthSelector.map(e=> {e.checked && (length = e.value)});
-    console.log(length);
+        lengthSelector.map(e => {
+            if (e.checked) {
+                length = e.value;
+                window.localStorage.setItem("breathe-length", length);
+            }
+        });
+    }
     cover.style.display = "none";
     document.getElementsByClassName("circle")[0].classList.toggle("animate");
     document.getElementsByClassName("text")[0].classList.toggle("animate");
     audio = new Audio("audio/Raindrops-noise.mp3");
     audio.play();
     audio.loop = true;
-    minutes = Math.floor(length / 60), seconds = length%60;
+    (minutes = Math.floor(length / 60)), (seconds = length % 60);
     progressBarWidth = 100;
     renderTimer(minutes, seconds);
     const timer = window.setInterval(time, 1000);
@@ -45,7 +54,6 @@ function time() {
         seconds = 59;
     }
     bar.style.width = progressBarWidth + "%";
-
 }
 
 function renderTimer(minutes, seconds) {
