@@ -15,29 +15,37 @@ backgroundButtons.map(e => {
     e.addEventListener("click", handleColorChange);
 });
 
+    let length;
+
+
 const cover = document.getElementById("cover");
 document.getElementById("start").addEventListener("click", e => {
+    const lengthSelector = [...document.getElementsByName("length")];
+
+    lengthSelector.map(e=> {e.checked && (length = e.value)});
+    console.log(length);
     cover.style.display = "none";
     document.getElementsByClassName("circle")[0].classList.toggle("animate");
     document.getElementsByClassName("text")[0].classList.toggle("animate");
     audio = new Audio("audio/Raindrops-noise.mp3");
     audio.play();
     audio.loop = true;
-    (minutes = 0), (seconds = 0);
-    progressBarWidth = 0;
+    minutes = Math.floor(length / 60), seconds = length%60;
+    progressBarWidth = 100;
     renderTimer(minutes, seconds);
     const timer = window.setInterval(time, 1000);
 });
 
 function time() {
-    seconds += 1;
-    progressBarWidth += 1;
-    if (seconds === 60) {
-        minutes += 1;
-        seconds = 0;
+    renderTimer(minutes, seconds);
+    seconds -= 1;
+    progressBarWidth -= 100 / length;
+    if (seconds < 0) {
+        minutes -= 1;
+        seconds = 59;
     }
     bar.style.width = progressBarWidth + "%";
-    renderTimer(minutes, seconds);
+
 }
 
 function renderTimer(minutes, seconds) {
