@@ -140,41 +140,43 @@ input[type="radio"] {
     display: none;
 }
 
-label div {
-    border: 2px solid #fff;
-    display: inline-block;
-    padding: .375rem .75rem;
-    margin-bottom: .75rem;
-    color: #fff;
-    width: 3.75rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-}
-
-label div:hover {
-    background-color: #fff;
-    color: #444;
-}
-
 #length__selector {
     font-size: 0;
     margin-bottom: 2rem;
 }
 
-#length__selector label div {
+.lenght__item {
+    display: inline-block;
+    margin-bottom: .75rem;
+    color: #fff;
+    width: 5.75rem;
+    text-align: center;
     font-size: 1rem;
 }
 
-#length__selector label:first-child div {
+.lenght__item label {
+    border: 2px solid #fff;
+    display: block;
+    padding: .375rem .75rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.lenght__item:hover label,
+.lenght__item > input:checked + label {
+    background-color: #fff;
+    color: #444;
+}
+
+.lenght__item:first-child label {
     border-radius: 12px 0 0 12px;
 }
-#length__selector label:not(:last-child) div {
+
+.lenght__item:not(:last-child) label {
     border-right: 0;
 }
 
-
-#length__selector label:last-child div {
+.lenght__item:last-child label {
     border-radius: 0 12px 12px 0;
 }
 
