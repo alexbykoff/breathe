@@ -23,16 +23,13 @@ backgroundButtons.map(e => {
 
 const cover = document.getElementById("cover");
 document.getElementById("start").addEventListener("click", e => {
-
-        const lengthSelector = [...document.getElementsByName("length")];
-
-        lengthSelector.map(e => {
-            if (e.checked) {
-                length = e.value;
-                window.localStorage.setItem("breathe-length", length);
-
-            }
-        });
+    const lengthSelector = [...document.getElementsByName("length")];
+    lengthSelector.map(e => {
+        if (e.checked) {
+            length = e.value;
+            window.localStorage.setItem("breathe-length", length);
+        }
+    });
 
     cover.style.display = "none";
     document.getElementsByClassName("circle")[0].classList.toggle("animate");
