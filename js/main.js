@@ -74,3 +74,11 @@ function changeColor(color) {
     )[0];
     activeSelector.classList.add("active-selector");
 }
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('../service-worker.js')
+        .then(() => {
+            console.log('Service Worker Registered');
+        });
+}
