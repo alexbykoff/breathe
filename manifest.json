@@ -1,0 +1,9 @@
+{
+    "name": "Breathe",
+    "short_name": "Breathe",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#D8973C",
+    "theme_color": "#D8973C",
+    "orientation": "portrait"
+}
